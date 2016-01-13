@@ -1,0 +1,17 @@
+{
+  "name": "px-intro",
+  "version": "1.0.0",
+  "description": "waves pixi demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wave"
+  ],
+  "author": "James La Marre",
+  "license": "ISC",
+  "dependencies": {
+    "pixi.js": "goodboydigital/pixi.js"
+  }
+}
