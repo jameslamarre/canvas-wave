@@ -2,5 +2,28 @@
 	display: inline-block;
 	margin: 0;
 	padding: 0;
-	position: absolute;
+	position: relative;
 }
+
+button {
+	height: 100px;
+	margin: 25px;
+	width: 100px;
+	z-index: 1;
+}
+
+
+/*
+
+Colors
+
+ba95c6
+eb3099
+f45da3
+5b415c
+b63a9c
+bca7cd
+e852a3
+b63a9c
+f280ac
+*/
