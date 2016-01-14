@@ -135,9 +135,6 @@ var renderShapes = function(startPoint, rangeVariation, horizontalVariation, col
 
 // clear previous wave
 
-var clearStage = function(){
-	stage.clear();
-};
 var clear = function(){
 	waves.clear();
 };
@@ -150,12 +147,12 @@ var clear = function(){
 function draw() {
 	renderer.render(stage);
 	requestAnimationFrame(draw);
+	clear();
 	renderShapes(0, 100, 10, 0xba95c6);
 	renderShapes(100, 0, 5, 0xeb3099);
 	renderShapes(220, 200, 12, 0xf45da3);
 	renderShapes(355, 0, 7, 0x5b415c);
 	renderShapes(533, 0, 1, 0xb63a9c);
-	// clearStage();
 };
 
 function move() {
@@ -167,6 +164,12 @@ function move() {
 	};
 	clear();
 	console.log(tick);
+};
+
+function erase() {
+	clear();
+	renderer.render(stage);
+	requestAnimationFrame(draw);
 };
 
 var i = opt.count + 2;
