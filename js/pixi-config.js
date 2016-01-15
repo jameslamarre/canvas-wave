@@ -247,7 +247,7 @@ var renderShapes = function(startPoint, rangeVariation, horizontalVariation, col
 
 		var c = points[i].x + (horizontalVariation * 10);
 		var d = points[i].y + startPoint;
-		var e = (points[i].x + points[i + 1].x) / 2;
+		var e = (points[i].x + points[i + 1].x) / 2 + (horizontalVariation * 10);
 		var f = (points[i].y + points[i + 1].y) / 2 + startPoint;
 
 		waves.bezierCurveTo(points[i].x, points[i].y + startPoint, 
@@ -285,11 +285,11 @@ function draw() {
 	// console.log(tick);
 	renderLines(100, 15, 5, colorPack1[1]);
 	renderLines(250, 15, 2, colorPack1[2]);
-	renderLines(400, 15, 7, colorPack1[3]);
-	renderLines(550, 15, 1, colorPack1[4]);
-	renderLines(700, 15, 1, colorPack1[5]);
-	renderLines(850, 15, 1, colorPack1[6]);
-	renderLines(1000, 15, 1, colorPack1[7]);
+	renderLines(400, 8, 7, colorPack1[3]);
+	renderLines(500, 15, 1, colorPack1[4]);
+	renderLines(700, 10, 6, colorPack1[5]);
+	renderLines(825, 15, 10, colorPack1[6]);
+	renderLines(1000, 15, 9, colorPack1[7]);
 
 	// renderShapes(100, 0, 5, 0xee73a1);
 	// renderShapes(220, 200, 12, 0xa2c3d0);
