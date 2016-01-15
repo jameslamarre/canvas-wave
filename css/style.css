@@ -1,13 +1,14 @@
 * {
 	display: inline-block;
 	margin: 0;
+	overflow: hidden;
 	padding: 0;
 	position: relative;
 }
 
 button {
 	height: 100px;
-	margin: 25px;
+	margin: 15px;
 	width: 100px;
 	z-index: 1;
 }
@@ -17,26 +18,40 @@ button {
 
 Color pack 1 
 
-ba95c6
-eb3099
-f45da3
-5b415c
-b63a9c
-bca7cd
-e852a3
-b63a9c
-f280ac
+59a0ef,
+ee73a1,
+a2c3d0,
+59a0ef,
+e34697,
+59a0ef,
+ee73a1,
+a2c3d0,
+59a0ef,
+e34697,
 
 Color pack 2 
 
-981d42
-f280ac
-ea273f
-e852a3
-ea273f
-971d3a
-ea273f
-bca7cd
-e852a3
+b29cc7
+ab3394
+ee73a1
+203562
+e34697
+b29cc7
+ab3394
+e34697
+203562
+
+Color pack 3
+
+ef75a0
+4e394f
+b29cc7
+e34697
+ab3394
+4e394f
+ea42a3
+ef75a0
+ab3394
+b29cc7
 
 */
