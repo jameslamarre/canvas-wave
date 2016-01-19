@@ -14,48 +14,49 @@ button {
 }
 
 canvas {
-	
+	top: -152px;
 }
 
 
 /*
 
-Color pack 1 
 
-59a0ef,
-ee73a1,
-a2c3d0,
-59a0ef,
-e34697,
-59a0ef,
-ee73a1,
-a2c3d0,
-59a0ef,
-e34697
+Pack 1 
 
-Color pack 2 
+"0xa1c3d1",
+"0xf172a1",
+"0xad2e95",
+"0xb39bc8",
+"0xe64398",
+"0xa1c3d1",
+"0xf172a1",
+"0xad2e95",
+"0xb39bc8",
+"0xe64398"
 
-b29cc7
-ab3394
-ee73a1
-203562
-e34697
-b29cc7
-ab3394
-e34697
-203562
+Pack 2
 
-Color pack 3
+"0xb39bc8",
+"0xad2e95",
+"0xf172a1",
+"0x1f3463",
+"0xe64398",
+"0xb39bc8",
+"0xad2e95",
+"0xe64398",
+"0x1f3463"
 
-ef75a0
-4e394f
-b29cc7
-e34697
-ab3394
-4e394f
-ea42a3
-ef75a0
-ab3394
-b29cc7
+Pack 3
+
+"0xf274a0",
+"0x4f3850",
+"0xb39bc8",
+"0xe64398",
+"0xad2e95",
+"0x4f3850",
+"0xed3da4",
+"0xf274a0",
+"0xad2e95",
+"0xb39bc8"
 
 */
