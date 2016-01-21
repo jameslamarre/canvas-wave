@@ -1,12 +1,20 @@
 
 
 var canvas = document.getElementById('c'),
+    d = document.getElementById('d'),
+    e = document.getElementById('e'),
     ctx = canvas.getContext('2d'),
+    dtx = d.getContext('2d'),
+    etx = e.getContext('2d'),
 
     w = canvas.width = 480,
     h = canvas.height = 900,
     cw = canvas.width = w,
     ch = canvas.height = h,
+    dw = d.width = w,
+    dh = d.height = h,
+    ew = e.width = w,
+    eh = e.height = h,
 
     points = [],
     tick = 0,
@@ -33,9 +41,9 @@ var canvas = document.getElementById('c'),
 	    return -c/2 * ((--t)*(t-2) - 1) + b;
     };
 
-ctx.lineJoin ='round';
-ctx.lineWidth = opt.thickness;
-ctx.strokeStyle = opt.strokeColor;
+ctx.lineJoin = dtx.lineJoin = etx.lineJoin ='round';
+ctx.lineWidth = dtx.lineWidth = etx.lineWidth = opt.thickness;
+ctx.strokeStyle = dtx.strokeStyle = etx.strokeStyle = opt.strokeColor;
 
 var Point = function(config){
   this.anchorX = config.x;
@@ -52,7 +60,7 @@ Point.prototype.setTarget = function(){
   this.targetY = this.anchorY + rand(0, opt.range.y * 2) - opt.range.y;
   this.tick = 0;
   this.duration = rand(opt.duration.min, opt.duration.max);
-};
+}
   
 Point.prototype.update = function(){
   var dx = this.targetX - this.x;
@@ -88,15 +96,21 @@ var updatePoints = function(){
 
 var renderShapes = function(){
   ctx.beginPath();
+  dtx.beginPath();
+  etx.beginPath();
 
   var pointCount = points.length;
   ctx.moveTo(points[0].x, points[0].y);
+  dtx.moveTo(points[0].x, points[0].y); 
+  etx.moveTo(points[0].x, points[0].y); 
 
   var i;
   for (i = 0; i < pointCount - 1; i++) {
     var c = (points[i].x + points[i + 1].x) / 2;
     var d = (points[i].y + points[i + 1].y) / 2;
     ctx.quadraticCurveTo(points[i].x, points[i].y, c, d);
+    dtx.quadraticCurveTo(points[i].x, points[i].y, c, d);
+    etx.quadraticCurveTo(points[i].x, points[i].y, c, d);
   }
 
   ctx.lineTo(-opt.range.x - opt.thickness, ch + opt.thickness);
@@ -104,17 +118,39 @@ var renderShapes = function(){
   ctx.closePath();   
   ctx.fillStyle = 'hsl(' + 310 + ', 90%, 70%)';
   ctx.fill();  
+  ctx.stroke();
+
+
+  dtx.lineTo(-opt.range.x - opt.thickness, dh + opt.thickness);
+  dtx.lineTo(dw + opt.range.x + opt.thickness, dh + opt.thickness);
+ 
+  dtx.closePath();   
+  dtx.fillStyle = 'hsl(' + 120 + ', 90%, 70%)';
+  dtx.fill();  
+  dtx.stroke();
+
+
+
+  // etx.lineTo(-opt.range.x - opt.thickness, eh + opt.thickness);
+  // etx.lineTo(ew + opt.range.x + opt.thickness, eh + opt.thickness);
+ 
+  etx.closePath();   
+  etx.fillStyle = 'hsl(' + 200 + ', 80%, 70%)';
+  etx.fill();  
+  // etx.stroke();
 };
 
 var clear = function(){
   ctx.clearRect(0, 0, cw, ch);
+  dtx.clearRect(0, 0, dw, dh);
+  etx.clearRect(0, 0, ew, eh);
 };
 
 var loop = function(){
-  window.requestAnimFrame(loop, canvas);
+  window.requestAnimFrame(loop, canvas, d, e);
   tick++;
-  updatePoints();
   clear();
+  updatePoints();
   renderShapes();
 };
 

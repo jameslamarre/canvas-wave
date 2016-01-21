@@ -1,7 +1,5 @@
 
 
-
-
 var renderSprites = function() {
 
 	var pointCount = points.length;

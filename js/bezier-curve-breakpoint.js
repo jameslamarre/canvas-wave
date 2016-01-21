@@ -1,6 +1,5 @@
 
-
-// setup webgl renderer
+// setup webgl 
 
 var renderer = new PIXI.WebGLRenderer(window.innerWidth, window.innerHeight, { backgroundColor: 0xFFDEFF, antialias: true });
 document.body.appendChild(renderer.view);
@@ -17,10 +16,6 @@ var waves = new PIXI.Graphics(),
     tick = 0;
     x = 0;
 // 
-
-
-
-
 
 // setup waves as PIXI Graphics NEED TO UPDATE TO TEXTURE FOR SMOOTH LINES 
 // color defined by '0xFF00FF' style value
@@ -57,21 +52,13 @@ var renderShapes = function(Ymin, Ymax, color) {
 
 };
 
-//
-
-
 // clear previous wave
 
 var clear = function(){
 	waves.clear();
 };
 
-//
-
-
-
 // draw stage onto canvas
-
 
 function draw() {
 	requestAnimationFrame(draw);
@@ -86,4 +73,3 @@ function draw() {
 draw();
 
 //
-

@@ -7,15 +7,9 @@ var stage = new PIXI.Container(interactive);
 
 var interactive = true;
 
-//
-
-
 // multiple graphics as textures option 
 
 var texture = new PIXI.RenderTexture(renderer, window.innerWidth, window.innerHeight);
-
-//
-
 
 // instantiate wave variables and config options 
 
@@ -46,9 +40,6 @@ var lines = new PIXI.Graphics();
 	    if ((t/=d/2) < 1) return c/2*t*t + b;
 	    return -c/2 * ((--t)*(t-2) - 1) + b;
     };
-
-// 
-
 
 // color variables
 
@@ -85,8 +76,6 @@ var level1 = ["0xa1c3d1",
 				"0xb39bc8"];
 
 	// bgcolor = document.body.style.background = "#a1c3d1";
-
-//
 
 // create points function to create animation function 
 
@@ -138,8 +127,6 @@ var updatePoints = function(){
 	return i;
 };
 
-//
-
 // setup waves as PIXI Graphics 
 // startPoint defines Y axis start point
 // counter should be between 4-10
@@ -175,9 +162,6 @@ var renderLines = function(startPoint, rangeVariation, horizontalVariation, colo
 var clear = function(){
 	lines.clear();
 };
-
-//
-
 
 // draw stage onto canvas
 
@@ -241,9 +225,10 @@ while(i--){
 	}));
 };
 
-setTimeout(function() {
-	draw();
-}, 15);
+// begin!
+
+draw();
+
 //
 
 
