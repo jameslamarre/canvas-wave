@@ -84,6 +84,8 @@ var level1 = ["0xa1c3d1",
 				"0xad2e95",
 				"0xb39bc8"];
 
+	// bgcolor = document.body.style.background = "#a1c3d1";
+
 //
 
 // create points function to create animation function 
@@ -178,8 +180,6 @@ var clear = function(){
 
 
 // draw stage onto canvas
-// below functions control color, 
-// rendering, and movement
 
 function pack(colorPack, color) {
 	document.body.style.background = color;
@@ -230,9 +230,7 @@ function move() {
 
 function reset() {
 	tick = 0;
-};
-
-//
+}
 
 var i = opt.count + 2;
 var spacing = (w + (opt.range.x * 2)) / (opt.count-1);
